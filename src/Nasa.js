@@ -1,3 +1,4 @@
+// css isn't used as there is no styling applied. while not a requirement of this it's common in all elements to style
 import { LitElement, html, css } from 'lit';
 import '@lrnwebcomponents/accent-card/accent-card.js';
  
@@ -10,7 +11,7 @@ export class NasaImageSearch extends LitElement {
     super();
     this.term = "Moon landing";
     this.images = [];
-    this.page = 3;
+    this.page = 3; // careful defaulting this value to something that might not have 3 pages of results
     this.startDate = 2000;
     this.endDate = 2020;
   }
@@ -36,6 +37,8 @@ export class NasaImageSearch extends LitElement {
         this.getData();
       }
       // when dates changes, fire an event for others to react to if they wish
+
+      // dates is boilerplate from a previous example. if it doesn't do anything, don't include it.
       else if (propName === 'dates') {
         this.dispatchEvent(
           new CustomEvent('results-changed', {
