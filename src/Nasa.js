@@ -16,6 +16,10 @@ export class NasaImageSearch extends LitElement {
     this.endDate = 2020;
   }
 
+  // Page, dates are Number type
+  // images is an Array and should be data typed that way
+  // while the code didn't throw errors, this could manifest issues later on
+  // if things implemented this tag in their code
    static properties = {
      term: {},
      images: {},
